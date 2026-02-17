@@ -1,0 +1,65 @@
+/* WIND LOADER */
+
+.wind-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 10%;
+  z-index: 9999;
+}
+
+.wind-line {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    white,
+    transparent
+  );
+  animation: windFlow 2s linear infinite;
+}
+
+.wind-line:nth-child(1) {
+  width: 150px;
+}
+
+.wind-line:nth-child(2) {
+  width: 220px;
+  animation-delay: 0.3s;
+}
+
+.wind-line:nth-child(3) {
+  width: 120px;
+  animation-delay: 0.6s;
+}
+.wind-line:nth-child(4) {
+  width: 120px;
+  animation-delay: 0.4s;
+}
+.wind-line:nth-child(5) {
+  width: 120px;
+  animation-delay: 0.2s;
+}
+
+@keyframes windFlow {
+  0% {
+    transform: translateX(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+}
